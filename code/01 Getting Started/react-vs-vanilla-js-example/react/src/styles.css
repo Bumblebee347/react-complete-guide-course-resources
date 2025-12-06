@@ -7,6 +7,8 @@ body {
   background-color: #181c1f;
   color: #bdd1d4;
   margin: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 header {
@@ -14,11 +16,13 @@ header {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+    user-select: none;
 }
 
 header img {
   width: 3rem;
   object-fit: contain;
+    user-select: none;
 }
 
 header h1 {
