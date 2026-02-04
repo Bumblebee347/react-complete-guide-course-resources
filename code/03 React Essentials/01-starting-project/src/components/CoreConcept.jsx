@@ -1,3 +1,4 @@
+import "./CoreConcepts.css"
 
 function CoreConcept({title: title2, image, description}){
     return (
