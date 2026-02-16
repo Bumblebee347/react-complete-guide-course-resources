@@ -9,13 +9,19 @@ export default function Player({ name: initialName, symbol }) {
         setIsEditing((editing) => !editing);
     }
 
-    let playerName = <span className='player-name'>{name}</span>;
-    if (isEditing) {
-        playerName = <input ref={inputRef} type="text" value={name} onChange={handleChange} required/>
+    function handleKeyDown(event) {
+        if (event.key === "Enter") {
+            setIsEditing(false);
+        }
     }
 
     function handleChange(event){
         setName(event.target.value);
+    }
+
+    let playerName = <span className='player-name'>{name}</span>;
+    if (isEditing) {
+        playerName = <input ref={inputRef} type="text" value={name} onChange={handleChange} onKeyDown={handleKeyDown} required/>
     }
 
     useEffect(() => {
